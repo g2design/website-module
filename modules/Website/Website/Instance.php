@@ -13,6 +13,8 @@ class Instance {
 	 */
 	var $twig = null;
 	private $pages;
+	private $before = [];
+	private $after = [];
 	private $components;
 
 	/**
