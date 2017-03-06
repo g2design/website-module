@@ -36,6 +36,7 @@ class Instance {
 
 
 		//Merge config is declared
+		if (( $conf = @\G2Design\Config::get()->twig)) {
 			//Convert to array;
 			$conf = (array) $conf;
 			$conf = array_merge($defaults, $conf);
