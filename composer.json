@@ -1,0 +1,16 @@
+{
+    "name": "g2design/website-module",
+    "description": "Module for quickly deploying a website",
+    "type": "library",
+ 
+    "minimum-stability": "dev",
+    "require": {
+		  "g2design/g2app": "dev-master"
+        
+	},
+	"autoload": {
+		"files": [
+			"init.php"
+		]
+	}
+}

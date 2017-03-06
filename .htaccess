@@ -1,0 +1,55 @@
+
+
+<IfModule php5_module>
+    php_value session.cookie_httponly 1
+	#php_value session.cookie_secure 1
+</IfModule>
+
+# BEGIN REQUIRED FOR WEBFONTS
+
+AddType font/ttf .ttf
+AddType font/eot .eot
+AddType font/otf .otf
+AddType font/woff .woff
+
+<FilesMatch "\.(ttf|otf|eot|woff)$">
+    <IfModule mod_headers.c>
+        Header set Access-Control-Allow-Origin "*"
+    </IfModule>
+</FilesMatch>
+
+# END REQUIRED FOR WEBFONTS
+
+
+
+<IfModule mod_rewrite.c>
+#RewriteEngine On
+#RewriteRule ^(.*)$ index.php?MVc_GeTFILE=$1 [L,QSA]
+
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . index.php [L]
+
+</IfModule>
+
+# Prevent file browsing
+Options -Indexes
+
+# Protect composer.json
+<FilesMatch "composer\.json|composer\.lock|\.htaccess">
+  Order allow,deny
+  Deny from all
+Satisfy all
+</FilesMatch>
+
+<IfModule mod_rewrite.c>
+  Options +FollowSymlinks
+  RewriteEngine On
+
+  
+</IfModule>
+
+RewriteCond %{HTTP_USER_AGENT} libwww-perl.*
+RewriteRule .* – [F,L]
+
