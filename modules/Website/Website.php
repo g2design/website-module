@@ -3,9 +3,7 @@
 class Website extends \G2Design\ClassStructs\Module {
 	
 	public function init() {
-		$this->add_route('test', function(){
-			return "Website module loading";
-		});
+		
 	}
 	
 	/**
